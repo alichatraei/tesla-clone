@@ -1,14 +1,11 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   carContainer: {
     width: "100%",
-    height: "100%",
-    justifyContent: "space-between",
+    height: Dimensions.get("window").height,
   },
   titlesStyles: {
-    flexDirection: "column",
-    alignSelf: "center",
-    justifyContent: "center",
+    alignItems: "center",
     marginTop: 50,
   },
   titleStyle: {
@@ -21,14 +18,15 @@ const styles = StyleSheet.create({
     color: "#818181",
   },
   bgImage: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "cover",
+    flex: 1,
+    resizeMode: "contain",
     position: "absolute",
     ...StyleSheet.absoluteFillObject,
   },
   buttonContainer: {
-    marginBottom: 50,
+    position: "absolute",
+    width: "100%",
+    bottom: 50,
   },
 });
 export default styles;

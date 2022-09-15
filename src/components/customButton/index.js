@@ -1,8 +1,13 @@
 import React from "react";
-import { Pressable, Text, View } from "react-native";
+import { Linking, Pressable, Text, View } from "react-native";
 import styles from "./styles";
 
-const CustomButton = ({ buttonTitle, backgroundColor, buttonTitleColor }) => {
+const CustomButton = ({
+  buttonTitle,
+  backgroundColor,
+  buttonTitleColor,
+  websiteLike = "www.tesla.com",
+}) => {
   return (
     <View style={styles.buttonContainer}>
       <Pressable
@@ -10,6 +15,15 @@ const CustomButton = ({ buttonTitle, backgroundColor, buttonTitleColor }) => {
           styles.customButtonStyles,
           { backgroundColor: backgroundColor },
         ]}
+        onPress={() =>
+          Linking.canOpenURL(websiteLike).then((supported) =>
+            supported
+              ? Linking.openURL(websiteLike)
+              : console.warn(
+                  `Oops we don't know how open this URL: ${websiteLike}`
+                )
+          )
+        }
       >
         <Text style={{ color: buttonTitleColor }}>{buttonTitle}</Text>
       </Pressable>
