@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import CarItem from "./src/components/carItem";
+const slides = {
+  car1: require("./assets/images/model1.jpg"),
+  car2: require("./assets/images/model2.jpg"),
+  car3: require("./assets/images/model3.jpg"),
+  car4: require("./assets/images/model4.jpg"),
+};
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <CarItem
+        bgImage={slides.car1}
+        title="ModelS"
+        subtitle="Starting at $84,125"
+        titleColor="#fafafa"
+        subtitleColor="#818181"
+      />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const styles = StyleSheet.create({});
