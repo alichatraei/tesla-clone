@@ -18,10 +18,12 @@ const styles = StyleSheet.create({
     color: "#818181",
   },
   bgImage: {
-    flex: 1,
     resizeMode: "contain",
     position: "absolute",
-    ...StyleSheet.absoluteFillObject,
+    top: 0,
+    bottom: 0,
+    width: "100%",
+    height: "100%",
   },
   buttonContainer: {
     position: "absolute",

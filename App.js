@@ -1,10 +1,12 @@
 import React from "react";
 import { Dimensions, FlatList, StyleSheet, View } from "react-native";
 import CarItem from "./src/components/carItem";
+import Header from "./src/components/Header";
 import carsList from "./src/constants/carsList";
 export default function App() {
   return (
     <View style={styles.container}>
+      <Header />
       <View style={styles.flatListContainer}>
         <FlatList
           data={carsList}
